@@ -1,0 +1,39 @@
+<br><br><br>
+<div class="card col-md-12 offset-md-3 offset-md-3">
+  <div class="card-body" style="background-color: gainsboro;">
+    <h2 style="padding-left:211px">Employee List</h2>
+    <hr />
+    <button [routerLink]="['/add']" class="btn" style="background-color: burlywood; width:130px;">Add</button>
+    <br><br>
+    <table class="table table-striped" style="background-color: ghostwhite;">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">MobileNo.</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Actions</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <th scope="row">{{ employee.id }}</th>
+
+          <td> {{ employee.name | uppercase }}</td>
+          <td> {{ employee.salary }} </td>
+          <td> {{ employee.email }}</td>
+          <td>{{ employee.gender }} </td>
+
+          <td>
+            <button [routerLink]="['/edit',employee.id]" class="btn"  style="background-color: palevioletred;">Edit</button>
+          </td>
+          <td> <button type="button" class="btn" (click)="remove(employee.id)" style="background-color: cadetblue;">
+              Remove</button></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

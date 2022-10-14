@@ -1,0 +1,13 @@
+ .card {
+   --bs-card-spacer-y: 1rem;
+   --bs-card-spacer-x: 4rem;
+   margin-left: 490px;
+   width: 377px;
+}
+
+
+.btn{
+  background-color: cornsilk;
+  width: 120px;
+  margin-left: 42px;
+}

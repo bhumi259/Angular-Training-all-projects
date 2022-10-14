@@ -1,0 +1,5 @@
+.card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 4rem;
+    margin-left: 490px;
+}

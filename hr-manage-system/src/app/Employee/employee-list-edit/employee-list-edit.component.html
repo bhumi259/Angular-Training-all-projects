@@ -1,0 +1,43 @@
+<br><br><br>
+<div class="row">
+  <div class="card col-md-3 offset-md-3 offset-md-3" style="background-color: gainsboro;">
+    <div class="row">
+      <h3 class="text-center"> Edit Employee </h3>
+      <hr />
+      <div class="card-body">
+        <form [formGroup]="checkForm" (ngSubmit)="save()">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" formControlName="name">
+          <span *ngIf="checkForm.get('name').hasError('required')" style="color: RED;">
+            * name is required
+          </span>
+          <span *ngIf="checkForm.get('name').hasError('pattern')" style="color: RED;">
+            * name Not valid.
+          </span>
+          <span *ngIf="checkForm.get('name').hasError('minlength')" style="color: RED;">
+            * name length
+          </span><br><br>
+          <label for="salary">Salary :</label><br>
+          <input type="text" id="salary" formControlName="salary"><br>
+          <label for="email">Email :</label><br>
+          <input type="text" id="email" formControlName="email"><br>
+          <span *ngIf="checkForm.get('email').hasError('required')" style="color: RED;">
+            * email is required
+          </span>
+          <span *ngIf="checkForm.get('email').hasError('email')" style="color: RED;">
+            * email Not valid format
+          </span>
+          <br>
+          <label for="gender">Gender:</label><br>
+          <input type="text" id="gender" formControlName="gender"><br>
+          <span *ngIf="checkForm.get('gender').hasError('required')" style="color: RED;">
+            * gender is required
+          </span><br>
+          <br />
+          <button [routerLink]="['/show']" class="btn" style="background-color: aliceblue;">Back</button>&nbsp;
+          <button class="btn btn-success" type="submit" [disabled]="!checkForm.valid" style="background-color: cadetblue;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
